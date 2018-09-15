@@ -1,8 +1,10 @@
 				
 		var crystalGame = {
 		
-			playerSum:   0,
-			firedButton: 0
+			playerSum:         0,
+			firedButton:       0,
+			playerTotalWins:   0,
+			computerTotalWins: 0
 			
 		};
 
@@ -45,11 +47,16 @@
 				
 				if(crystalGame.playerSum > targetScore) {
 				
-					alert('computer wins');
+					crystalGame.computerTotalWins ++;
+					document.getElementById('computerWins').innerHTML = 'The computer total wins are : ' + crystalGame.computerTotalWins;
+					
+					
 				
 				} else if(crystalGame.playerSum === targetScore) {
 				
-					alert('player wins');
+					crystalGame.playerTotalWins ++;
+					document.getElementById('playerWins').innerHTML = 'The player total wins are : ' + crystalGame.playerTotalWins;
+
 				
 				} else {
 				
@@ -57,51 +64,3 @@
 			
 			});
 
-		
-		
-		
-/* 		
-		
-		var scoreCrystal1, scoreCrystal2, scoreCrystal3, scoreCrystal4, playerSum = 0;
-
-		var targetScore   = Math.floor(Math.random() * 101) + 11;
-
-		scoreCrystal1 = Math.floor(Math.random() * 19)  + 11;
-		console.log(scoreCrystal1);
-		scoreCrystal2 = Math.floor(Math.random() * 19)  + 11;
-		console.log(scoreCrystal2);
-		scoreCrystal3 = Math.floor(Math.random() * 19)  + 11;
-		console.log(scoreCrystal3);
-		scoreCrystal4 = Math.floor(Math.random() * 19)  + 11;
-		console.log(scoreCrystal4);
-		
-		document.getElementById('targetScore').innerHTML = 'The target score for this game is : ' + targetScore;
-		document.getElementById('playerScore').innerHTML = 'The player score is : ' + playerSum;
-
-		function gamePlay() {
-			
-				function randomCrystal1() {
-
-					playerSum = playerSum + scoreCrystal1;
-					document.getElementById('playerScore').innerHTML = 'The player score is : ' + playerSum;
-				};
-		}; */
-
-/* 			function randomCrystal2() {
-
-				playerSum = playerSum + scoreCrystal2;
-				document.getElementById('playerScore').innerHTML = 'The player score is : ' + playerSum;
-			};
-
-			function randomCrystal3() {
-				
-				playerSum = playerSum + scoreCrystal3;
-				document.getElementById('playerScore').innerHTML = 'The player score is : ' + playerSum;
-			};
-
-			function randomCrystal4() {
-				
-				playerSum = playerSum + scoreCrystal4;
-				document.getElementById('playerScore').innerHTML = 'The player score is : ' + playerSum;
-			};
- */
